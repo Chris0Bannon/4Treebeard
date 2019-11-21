@@ -23,7 +23,7 @@ class UserPage extends Component {
 
       <div>
         <h1 id="welcome">
-          Welcome, {this.props.user.username}!
+          Welcome, {this.props.reduxStore.user.username}! You are in the {this.props.reduxStore.mapLocationReducer.LocationName}
     </h1>
         <div>
           <div>
@@ -53,9 +53,11 @@ class UserPage extends Component {
 // Instead of taking everything from state, we just want the user info.
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({user}) => ({ user });
-const mapStateToProps = state => ({
-  user: state.user,
-});
+const mapStoreToProps = reduxStore => {
+  return {
+    reduxStore
+  };
+};
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStoreToProps)(UserPage);
