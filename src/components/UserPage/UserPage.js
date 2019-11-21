@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import logo from '../../images/sporeGarden.jpg';
-
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
@@ -16,9 +17,18 @@ const UserPage = (props) => (
         <img src = {logo}/>
       </div>
       <div>
+        <Paper>
         <p>
-
+    adventure box
         </p>
+        </Paper>
+      </div>
+      <div>
+        <Button>North</Button>
+        <Button>South</Button>
+        <Button>East</Button>
+        <Button>West</Button>
+        <Button>Dialogue</Button>
       </div>
     </div>
     <LogOutButton className="log-in" />
