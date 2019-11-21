@@ -7,7 +7,7 @@ function * fetchMapLocation (action){
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true,
         };
-        const response = yield  axios.get('I NEED AN ADDRESs', config);
+        const response = yield  axios.get('/api/map/', config);
         yield put({type: 'SET_MAP_LOCATION', payload: response.data});
     }catch(error){
     console.log('mapLocation get request failed', error);
